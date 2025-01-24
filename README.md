@@ -51,11 +51,6 @@ python test.py --file-path <path-to-training-file> \
                --ckpt-dir <path-to-checkpoint-directory>
 ```
 
-## Example Use Cases
-- **Protecting Public Data:** Safeguard sensitive datasets from unauthorized use in LM training.
-- **Compliance with Data Protection Laws:** Facilitate adherence to GDPR and similar regulations by preventing unauthorized data exploitation.
-- **Research Applications:** Explore the impact of unlearnable datasets on various language models.
-
 ## Contributing
 We welcome contributions to enhance RegText! If you have suggestions or find issues, please submit a pull request or open an issue in this repository.
 
