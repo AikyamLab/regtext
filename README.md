@@ -58,7 +58,6 @@ python test.py --file-path <path-to-training-file> \
                --ckpt-dir <path-to-checkpoint-directory>
 ```
 
-Other metrics like 
 
 
 
