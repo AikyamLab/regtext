@@ -22,12 +22,19 @@ git clone https://github.com/allenai/natural-instructions.git
 cp -r polarity/ natural-instructions/splits/
 ```
 
-### 2. Generate Data
-Run the following commands to generate the poisoned datasets:
+### 2. Generate Data 
+Run the following commands to generate the poisoned datasets for, 
+1. Natural Instructions Polarity Dataset:
 ```bash
 python generate_polarity <metric-type ("global")> <seed (0, 1, 42)> <max_poisons (10)>
 python3 convert_to_csv.py
 ```
+
+2. Imdb or AGNews: 
+```bash
+python generate <seed (0, 1, 42)> <max_poisons (10)> <dataset_path (../data/imdb)>
+```
+
 > **Note:** Adjust the configurations in the scripts if required.
 
 ### 3. Train Models and Evaluate
@@ -50,6 +57,10 @@ python test.py --file-path <path-to-training-file> \
                --save-dir <directory-to-save-model> \
                --ckpt-dir <path-to-checkpoint-directory>
 ```
+
+Other metrics like 
+
+
 
 ## Contributing
 We welcome contributions to enhance RegText! If you have suggestions or find issues, please submit a pull request or open an issue in this repository.

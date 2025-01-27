@@ -103,7 +103,29 @@ def render_token(t: bytes) -> str:
     s = t.decode('utf-8', errors='replace')
     s = replace_control_characters(s)
     return s
-        
+
+def normalize_repetitions(text):
+    return re.sub(r'(.)\1{2,}', r'\1\1', text)
+
+def is_valid_word(word, max_punctuations=3):
+
+    punctuation_count = sum(1 for char in word if char in set('!"#$%&\'()*+,./:;<=>?@[\\]^_`{|}~'))
+    if punctuation_count > max_punctuations:
+        return False
+
+    if word.startswith(('http', 'www')) or '/' in word:
+        return False
+
+    return True
+
+def has_no_numbers(word):
+    return not any(char.isdigit() for char in word)
+
+def is_mostly_not_upper(word, threshold=0.5):
+    num_upper = sum(1 for char in word if char.isupper())
+    return (num_upper / len(word)) < threshold
+
+
 # min bpe
 class Tokenizer:
     def __init__(self):
