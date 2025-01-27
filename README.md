@@ -12,6 +12,7 @@
 
 How can individuals and organizations prevent their public text data from being exploited by open and closed language models? 
 The answer lies in **information theory**! 
+
 We propose a **model-agnostic** approach, RegText, to inject spurious correlations into text datasets. 
 Think of it as adding subtle, imperceptible "shortcuts" that trick models into learning fake patterns.
 
